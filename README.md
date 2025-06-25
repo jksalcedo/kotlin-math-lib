@@ -1,5 +1,5 @@
 # kotlin-math-lib - A Kotlin Math Utility Library
-[![Made with Google Gemini](https://img.shields.io/badge/Made%20with-Google%20Gemini-blue?logo=google)](https://ai.google.dev/gemini)
+[![Made with Google Gemini](https://img.shields.io/badge/Made%20with-Google%20Gemini-blue?logo=google)](https://ai.google.dev/gemini) [![Kotlin](https://img.shields.io/badge/Kotlin-2.1.21-blue.svg?logo=kotlin)](https://kotlinlang.org/) 
 
 kotlin-math-lib is a pure Kotlin JVM math utility library designed to provide common mathematical and statistical functions. It leverages Kotlin's idiomatic features and java.math.BigInteger to handle large number calculations safely, preventing overflow.
 
