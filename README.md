@@ -72,9 +72,6 @@ fun main() {
 ### Collection Extension Functions (Statistics)
 
 ```kotlin
-import com.jksalcedo.kotlinmathlib.average
-import com.jksalcedo.kotlinmathlib.median
-import com.jksalcedo.kotlinmathlib.mode
 
 fun main() {
     val numbers = listOf(10, 20, 30, 40, 50)
@@ -99,10 +96,6 @@ fun main() {
 ### Number Extension Functions
 
 ```kotlin
-import com.jksalcedo.kotlinmathlib.factorial
-import com.jksalcedo.kotlinmathlib.isPrime
-import com.jksalcedo.kotlinmathlib.power
-import com.jksalcedo.kotlinmathlib.randomInRange
 
 fun main() {
     // Factorial (returns BigInteger)
