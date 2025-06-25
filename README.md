@@ -1,25 +1,26 @@
-# KMath - A Kotlin Math Utility Library
+# kotlin-math-lib - A Kotlin Math Utility Library
+[![Made with Google Gemini](https://img.shields.io/badge/Made%20with-Google%20Gemini-blue?logo=google)](https://ai.google.dev/gemini)
 
-KMath is a pure Kotlin JVM math utility library designed to provide common mathematical and statistical functions. It leverages Kotlin's idiomatic features and `java.math.BigInteger` to handle large number calculations safely, preventing overflow.
+kotlin-math-lib is a pure Kotlin JVM math utility library designed to provide common mathematical and statistical functions. It leverages Kotlin's idiomatic features and java.math.BigInteger to handle large number calculations safely, preventing overflow.
 
 This library is ideal for any JVM-based Kotlin project, including Android applications, desktop applications, or server-side services, requiring robust mathematical computations.
 
 ## Features
 
 - **Core Arithmetic**: Functions for Greatest Common Divisor (GCD) and Least Common Multiple (LCM).
-- **Number Sequences**: Efficient iterative calculation of Fibonacci numbers, supporting large values using `BigInteger`.
-- **Factorial & Power**: Calculate factorials and powers for integers, returning `BigInteger` to handle large results and prevent overflow.
+- **Number Sequences**: Efficient iterative calculation of Fibonacci numbers, supporting large values using BigInteger.
+- **Factorial & Power**: Calculate factorials and powers for integers, returning BigInteger to handle large results and prevent overflow.
 - **Prime Number Check**: Optimized function to determine if an integer is prime.
 - **Statistical Functions (Collection Extensions)**:
-  - `average()`: Calculates the mean of a collection of numbers.
-  - `median()`: Finds the median of a collection.
-  - `mode()`: Identifies the most frequent value(s), supporting multiple modes.
+  - average(): Calculates the mean of a collection of numbers.
+  - median(): Finds the median of a collection.
+  - mode(): Identifies the most frequent value(s), supporting multiple modes.
 - **Random Generation**: Generate random integers within a specified range.
-- **BigInteger Integration**: Directly uses `java.math.BigInteger` for accurate large number arithmetic.
+- **BigInteger Integration**: Directly uses java.math.BigInteger for accurate large number arithmetic.
 
 ## Installation
 
-Add the JitPack repository to your project's `settings.gradle.kts` (or `settings.gradle`):
+Add the JitPack repository to your project's settings.gradle.kts (or settings.gradle):
 
 ```kotlin
 // settings.gradle.kts
@@ -29,28 +30,29 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url 'https://jitpack.io' } // Add this line
+        maven { url = uri("https://jitpack.io")} // For .kts
     }
 }
 ```
 
-Then, add the `kmath` dependency to your module's `build.gradle.kts` (or `build.gradle`). The `artifactId` will correspond to your module name (e.g., `kmath`).
+Then, add the kotlin-math-lib dependency to your module's build.gradle.kts (or build.gradle):
 
 ```kotlin
 // app/build.gradle.kts (or your JVM project's build.gradle.kts)
 dependencies {
-    implementation("com.jksalcedo.math:kmath:1.0-SNAPSHOT") // Use your current version or latest release tag
-    // No other special dependencies needed for basic KMath functions
+    implementation("com.github.jksalcedo:kotlin-math-lib:1.0.0")
+    // No other special dependencies needed for basic kotlin-math-lib functions
 }
 ```
 
 ## Usage
 
-The KMath library provides functions through its `KMath` object and as extension functions on `Collection` and `Int` types.
+The kotlin-math-lib library provides functions through its KMath object and as extension functions on Collection and Int types.
 
 ### KMath Object Functions
 
 ```kotlin
-import com.jksalcedo.kmath.KMath
+import com.jksalcedo.kotlinmathlib.KMath
 
 fun main() {
     // GCD (Greatest Common Divisor)
@@ -70,9 +72,9 @@ fun main() {
 ### Collection Extension Functions (Statistics)
 
 ```kotlin
-import com.jksalcedo.kmath.average
-import com.jksalcedo.kmath.median
-import com.jksalcedo.kmath.mode
+import com.jksalcedo.kotlinmathlib.average
+import com.jksalcedo.kotlinmathlib.median
+import com.jksalcedo.kotlinmathlib.mode
 
 fun main() {
     val numbers = listOf(10, 20, 30, 40, 50)
@@ -97,10 +99,10 @@ fun main() {
 ### Number Extension Functions
 
 ```kotlin
-import com.jksalcedo.kmath.factorial
-import com.jksalcedo.kmath.isPrime
-import com.jksalcedo.kmath.power
-import com.jksalcedo.kmath.randomInRange
+import com.jksalcedo.kotlinmathlib.factorial
+import com.jksalcedo.kotlinmathlib.isPrime
+import com.jksalcedo.kotlinmathlib.power
+import com.jksalcedo.kotlinmathlib.randomInRange
 
 fun main() {
     // Factorial (returns BigInteger)
@@ -125,9 +127,9 @@ fun main() {
 
 ## Limitations
 
-- **JVM-Specific**: This library is built for the Java Virtual Machine (JVM). It utilizes `java.math.BigInteger`, which is part of the Java Standard Library. Therefore, it is not directly compatible with non-JVM platforms like Kotlin/Native (e.g., iOS) or Kotlin/JS without an additional compatibility layer or a different BigInteger implementation for those targets.
+- **JVM-Specific**: This library is built for the Java Virtual Machine (JVM). It utilizes java.math.BigInteger, which is part of the Java Standard Library. Therefore, it is not directly compatible with non-JVM platforms like Kotlin/Native (e.g., iOS) or Kotlin/JS without an additional compatibility layer or a different BigInteger implementation for those targets.
 - **No Android UI Components**: This is a pure Kotlin library focusing on mathematical logic. It does not contain any Android UI components (Views, Activities, etc.).
-- **Floating-Point Precision**: While `BigInteger` handles large integers accurately, statistical functions like `average()` and `median()` return `Double`. Be mindful of standard floating-point precision limitations for extremely large or very small decimal numbers.
+- **Floating-Point Precision**: While BigInteger handles large integers accurately, statistical functions like average() and median() return Double. Be mindful of standard floating-point precision limitations for extremely large or very small decimal numbers.
 
 ## Contributing
 
